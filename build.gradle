@@ -2,13 +2,13 @@ plugins {
     id 'java'
 }
 
-group 'ru.netology'
-version '1.0-SNAPSHOT'
+group = 'ru.netology'
+version = '1.0-SNAPSHOT'
 
-sourceCompatibility = 11
-
-compileJava.options.encoding = "UTF-8"
-compileTestJava.options.encoding = "UTF-8"
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
 repositories {
     mavenCentral()
@@ -17,6 +17,10 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testImplementation 'com.codeborne:selenide:6.19.1'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
 
 test {
