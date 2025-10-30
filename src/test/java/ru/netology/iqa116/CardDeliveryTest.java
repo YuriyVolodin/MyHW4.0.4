@@ -5,10 +5,13 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
+
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import static com.codeborne.selenide.Selenide.*;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryTest {
 
@@ -20,7 +23,6 @@ public class CardDeliveryTest {
 
     @BeforeEach
     void setup() {
-        Configuration.headless = true;
         Configuration.browserSize = "1920x1080";
         open("http://localhost:9999");
     }
